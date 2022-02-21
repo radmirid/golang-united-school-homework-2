@@ -7,19 +7,19 @@ import (
 type length int
 
 const (
-	Pi    float64 = 3.14
-	zero  length  = 0
-	three length  = 3
-	four  length  = 4
+	Pi            float64 = 3.14
+	SidesCircle   length  = 0
+	SidesTriangle length  = 3
+	SidesSquare   length  = 4
 )
 
 func CalcSquare(sideLen float64, sidesNum length) float64 {
 	switch sidesNum {
-	case zero:
+	case SidesCircle:
 		return Pi * sideLen * sideLen
-	case three:
+	case SidesTriangle:
 		return (sideLen * sideLen * math.Sqrt(3)) / 4
-	case four:
+	case SidesSquare:
 		return sideLen * 4
 	default:
 		return 0
